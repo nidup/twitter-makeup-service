@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+
+  cli:
+    build: .docker/cli
+    container_name: twitter_makeup_cli
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./:/code
+      - ./:/data
