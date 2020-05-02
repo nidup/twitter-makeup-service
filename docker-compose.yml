@@ -5,10 +5,12 @@ services:
   cli:
     build: .docker/cli
     container_name: twitter_makeup_cli
-    command: "python src/makeup.py"
+    command: "python makeup/scheduler.py"
     stdin_open: true
     tty: true
     volumes:
-      - ./src:/usr/local/makeup/src
-      - ./config:/usr/local/makeup/config
-      - ./log:/usr/local/makeup/log
+      - ./makeup:/usr/local/myapp/makeup
+      - ./config:/usr/local/myapp/config
+      - ./log:/usr/local/myapp/log
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
