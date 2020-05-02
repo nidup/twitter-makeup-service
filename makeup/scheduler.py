@@ -73,6 +73,8 @@ schedule.every().day.at("08:30").do(change_display_name, name='Nicolas Dupont �
 schedule.every().day.at("13:39").do(change_display_name, name='Nicolas Dupont ☕')
 schedule.every().day.at("13:55").do(change_display_name, name='Nicolas Dupont 💻')
 schedule.every().day.at("19:00").do(change_display_name, name='Nicolas Dupont 📝')
+schedule.every().day.at("14:07").do(change_display_name, name='Nicolas Dupont ☕')
+
 
 # banner
 schedule.every().day.at("06:30").do(change_banner_picture, path='config/images/banner-night.jpg')
@@ -98,6 +100,7 @@ for job in schedule.jobs:
     print(job)
 current_time = now.strftime("%H:%M:%S")
 print("Current time =", current_time)
+print()
 
 
 while True:
