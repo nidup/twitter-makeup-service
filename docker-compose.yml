@@ -5,8 +5,10 @@ services:
   cli:
     build: .docker/cli
     container_name: twitter_makeup_cli
+    command: "python src/makeup.py"
     stdin_open: true
     tty: true
     volumes:
-      - ./:/code
-      - ./:/data
+      - ./src:/usr/local/makeup/src
+      - ./config:/usr/local/makeup/config
+      - ./log:/usr/local/makeup/log

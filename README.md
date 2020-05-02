@@ -1,10 +1,70 @@
-# Twitter Make Up Service
+# Make up your Twitter Profile! [docker service]
 
-Twitter Make Up Service 🚀
+Small service to automate the make up of your twitter profile, from 🐴 to 🦄 !
 
-## Build container and start them
+Based on a crontab and Twitter API, you can change your profile at any day 📅 or any hour 🕒.
+
+You can see it live on my [Twitter profile](https://twitter.com/duponico) 🐦
+
+## Examples 🦄
+
+Examples                                    | Result
+------------------------------------------- | ------------------------------
+Change the banner for the day               | ![alt text](./config/images/banner-morning.jpg "Morning banner")
+And the night                               | ![alt text](./config/images/banner-night.jpg "Night banner")
+Change your display name the morning        | Nico ☕
+And during the day                          | Nico 💻
+And for the night                           | Nico 😴
+Change your profile picture for xmas        | ![alt text](./config/images/profile-xmas.jpg "XMas avatar")
+
+You can also change your location when travelling, or description when you attend an event for instance.
+
+## Install 🐋
+
+Clone the repository:
+
+```
+git clone git@github.com:nidup/twitter-makeup-service.git
+```
+
+Build the Docker image:
+
+```
+docker-compose build
+```
+
+## Configure credentials 🔐
+
+Twitter Make Up allows to programmatically change your profile on your behalf.
+
+To configure it, you need to generate Twitter credentials.
+
+[Follow the Twitter guide (OAuth 1.0a)](https://developer.twitter.com/en/docs/basics/authentication/overview).
+
+Create a `secrets.py` file with your credentials in the `config` folder:
+
+```
+consumer_key = 'YourConsumerKey'
+consumer_secret = 'YourConsumerSecret'
+access_token = 'YourAccessToken'
+access_secret = 'YourAccessSecret'
+```
+
+## Configure your Make Up Crontab 🐴 🦄
 
 
+
+
+
+
+
+
+
+## Launch and Enjoy 
+
+```
+docker-compose up -d
+```
 
 
 ## Publish the library
