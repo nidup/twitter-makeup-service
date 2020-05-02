@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  cli:
+    build: .docker/cli
+    container_name: twitter_makeup_cli
+    command: "python makeup/scheduler.py"
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./makeup:/usr/local/myapp/makeup
+      - ./config:/usr/local/myapp/config
+      - ./log:/usr/local/myapp/log
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
